@@ -1,4 +1,4 @@
-This skin is to be considered pre-alpa, basically you don't want to be using it
+This skin is to be considered pre-alpha, basically you don't want to be using it
 unless you're a developer interested in contributing to it.
 
 This skin is intended to replace 90% of the base CSS in Komodo with something
