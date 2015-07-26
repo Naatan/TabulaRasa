@@ -1,0 +1,199 @@
+@import url("chrome://tabularasa/skin/colors.less");
+@import url("chrome://tabularasa/skin/reset.less");
+@import url("chrome://tabularasa/skin/normalize.less");
+
+@import url("chrome://komodo/skin/plat/shared/scrolltabs.less");
+@import url("chrome://komodo/skin/plat/shared/icons.less");
+@import url("chrome://komodo/skin/iconset/rules.less");
+
+:root, menupopup, popup, panel
+{
+    background: @background;
+}
+
+*, ::-moz-tree-cell-text
+{
+    color: @foreground; 
+    font: message-box;
+    font-family: 'Lucida Grande', 'Segoe UI', 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+}
+
+#komodo_main
+{
+    -moz-box-orient: horizontal;
+}
+
+#toolbox_main
+{
+    background: @primary;
+    
+    &, #main-toolboxrow-wrapper, toolbar, toolbaritem,
+    #main-toolboxrow > hbox
+    {
+        -moz-box-orient: vertical !important;
+    }
+    
+    toolbar
+    {
+        width: auto !important;
+        max-width: 50px;
+    }
+    
+    #main-toolboxrow-wrapper > toolbar
+    {
+        visibility: collapse;
+    }
+    
+    toolbarbutton dropmarker
+    {
+        visibility: collapse;
+    }
+    
+    toolbaritem > toolbarbutton
+    {
+        margin: 6px 0;
+    }
+}
+
+statusbar
+{
+    background: @primary;
+}
+
+splitter
+{
+    &:not(.workspace_splitter)
+    {
+        background-color: @border;
+    }
+    
+    &.workspace_splitter
+    {
+        position: relative;
+        z-index: 100;
+        
+        &[orient="horizontal"]
+        {
+            min-width: 5px;
+            width: 5px;
+            margin-left: -4px;
+        }
+    }
+    
+    &#workspace_left_splitter
+    {
+        border-right: 1px solid @border;
+    }
+    
+    &#workspace_right_splitter
+    {
+        border-left: 1px solid @border;
+    }
+    
+    &#bottom_splitter
+    {
+    }
+}
+
+#placesSubpanelSplitterHboxBorder
+{
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+#placesSubpanelSplitter vbox,
+#placesSubpanelDeck
+{
+    /*background: @secondary !important;*/
+}
+
+menupopup
+{
+    border: 1px solid @border;
+}
+
+tabs
+{
+    box-shadow: inset 0px -4px 0px 0px @border;
+    
+    tab
+    {
+        -moz-box-pack: center;
+        -moz-box-align: center;
+    }
+    
+    tab:not([selected])
+    {
+        border-bottom: 4px solid transparent;
+    }
+    
+    tab[selected]
+    {
+        position: relative;
+        z-index: 100;
+        border-bottom: 4px solid @special;
+    }
+}
+
+ko-pane[type="icons"] tab
+{
+    .tab-icon
+    {
+        margin-right: 0;
+    }
+}
+
+[selected="true"],
+menupopup > menu:hover,
+menupopup > menuitem:hover,
+treechildren::-moz-tree-row(selected)
+{
+    background: @highlight;
+}
+
+/* Scrollbars */
+
+scrollbar
+{
+    -moz-appearance: none;
+    border: 0;
+    background: transparent;
+    opacity: 1.0 !important;
+    
+    &[orient="vertical"]
+    {
+        min-width: 15px;
+    }
+    
+    &[orient="horizontal"]
+    {
+        min-height: 15px;
+    }
+
+    slider
+    {
+        -moz-appearance: none;
+        border: 0;
+    }
+
+    thumb
+    {
+        -moz-appearance: none;
+        background: @secondary;
+        border: 0;
+    }
+
+    thumb:hover
+    {
+        -moz-appearance: none;
+        background: @secondary;
+    }
+}
+
+/* Customizable Panes */
+
+ko-pane:not([customizing]) .pane-drop-target
+{
+    display: none;
+}

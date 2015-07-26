@@ -1,0 +1,5 @@
+override chrome://komodo/skin/platform.less chrome://tabularasa/skin/style.less
+override chrome://komodo/skin/komodo.css less://tabularasa/skin/komodo.less
+override chrome://komodo/skin/partials/scheme-skinning.less chrome://tabularasa/skin/void.css
+override chrome://komodo/skin/toolbar.css chrome://tabularasa/skin/void.css
+override chrome://global/skin/menu.css chrome://tabularasa/skin/void.css
