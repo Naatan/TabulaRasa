@@ -37,3 +37,12 @@ menuitem[type="radio"]
         visibility: visible;
     }
 }
+
+/* Use @selected-fg color for selected item in autocomplete popup
+ * Not sure where it should be, but I put it here.
+ */
+.ko-autocomplete-item[selected="true"] {
+    box > text-wrapper > description {
+        color: @selected-fg;
+    }
+}
