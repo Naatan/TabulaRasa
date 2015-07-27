@@ -3,6 +3,12 @@ label, description, button, toolbarbutton, textbox
     line-height: 1.5rem;
 }
 
+description, tab, textbox, menulist, menuitem, menu, treecol, button, toolbarbutton,
+checkbox, tabpanels, listitem, richlistitem
+{
+    color: @foreground; 
+}
+
 toolbaritem > toolbarbutton
 {
     margin: 4px 6px;
@@ -23,9 +29,14 @@ tab
     }
 }
 
-label, description
+description, listitem, richlistitem
 {
-    padding: 0.4rem 4px;
+    padding: 0.2rem 4px;
+}
+
+image + label
+{
+    padding-left: 4px;
 }
 
 ::-moz-tree-row {
@@ -58,9 +69,61 @@ toolbarbutton.menu-icon > label
     font-family: monospace;
 }
 
+menu, menuitem
+{
+    padding: 0.5rem 6px;
+}
+
+button, toolbarbutton
+{
+    padding: 2px;
+    margin: 2px;
+}
+
 page.widget listitem,
 page.widget richlistitem
 {
     padding-left: 4px;
     padding-right: 4px;
+}
+
+/* Textboxes */
+
+textbox, menulist
+{
+    background: @textbox;
+    padding: 4px;
+    border-radius: 2px;
+    margin: 4px;
+}
+
+tree:not(.bg_transparent),
+listbox:not(.bg_transparent),
+richlistbox:not(.bg_transparent)
+{
+    background: @textbox;
+}
+
+.disabled, [disabled="true"]
+{
+    opacity: 0.6;
+}
+
+separator
+{
+    height: 1rem;
+    
+    &.slim
+    {
+        height: 0.5rem;
+    }
+}
+
+button:not(.button-toolbar-a)
+{
+    background: @button;
+    color: @button-fg;
+    margin: 4px;
+    padding: 4px;
+    border-radius: 2px;
 }

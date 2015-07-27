@@ -7,9 +7,14 @@
 @icon-hud-url-suffix:           "?preset=hud";
 
 @icon-folder-large:             url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{folder}&size=32');
-@icon-folder-open:              url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{folder}');
-@icon-folder-closed:            url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{folder}');
-@icon-folder-remote:            url('@{icon-url-prefix}folder3.svg@{icon-url-suffix}&color=@{folder}');
-@icon-project:                  url('@{icon-url-prefix}cabinet.svg@{icon-url-suffix}&color=@{folder}');
+@icon-folder-open:              url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{escaped-folder}');
+@icon-folder-closed:            url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{escaped-folder}');
+@icon-folder-remote:            url('@{icon-url-prefix}folder3.svg@{icon-url-suffix}&color=@{escaped-folder}');
+@icon-project:                  url('@{icon-url-prefix}cabinet.svg@{icon-url-suffix}&color=@{escaped-folder}');
 
 @icon-arrow-down-small:        url("@{icon-url-prefix}arrow-down2.svg@{icon-url-suffix}");
+
+@icon-checkbox:                 url("@{icon-url-prefix}checkbox-unchecked3.svg@{icon-url-suffix}&color=@{escaped-special}");
+@icon-checkbox-checked:         url("@{icon-url-prefix}checkbox-partial3.svg@{icon-url-suffix}&color=@{escaped-special}");
+@icon-radio:                    url("@{icon-url-prefix}radio-unchecked.svg@{icon-url-suffix}&color=@{escaped-special}");
+@icon-radio-selected:           url("@{icon-url-prefix}radio-checked.svg@{icon-url-suffix}&color=@{escaped-special}");

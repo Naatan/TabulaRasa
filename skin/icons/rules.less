@@ -3,6 +3,14 @@ menu .menu-right
     list-style-image: @icon-arrow-right-small;
 }
 
+.menulist-dropmarker
+{
+    list-style-image: @icon-arrow-down-small;
+    display: inherit;
+    width: 16px;
+    height: 16px;
+}
+
 treechildren::-moz-tree-twisty {
     -moz-appearance: none;
     width: 16px;
@@ -13,4 +21,48 @@ treechildren::-moz-tree-twisty {
 
 treechildren::-moz-tree-twisty(open) {
     list-style-image: @icon-arrow-down-small;
+}
+
+checkbox, radio
+{
+    background-size: 16px;
+    background-position: center left;
+    background-repeat: no-repeat;
+    
+    padding-left: 20px;
+    
+    image
+    {
+        visibility: collapse;
+    }
+}
+
+checkbox
+{
+    &:not([checked])
+    {
+        background-image: @icon-checkbox;
+    }
+    
+    &[checked]
+    {
+        background-image: @icon-checkbox-checked;
+    }
+}
+
+menuitem[type="checkbox"],
+menuitem[type="radio"]
+{
+    padding-left: 0;
+    
+    label
+    {
+        padding-left: 6px;
+    }
+    
+    .menu-iconic-left image
+    {
+        width: 16px;
+        height: 16px;
+    }
 }
