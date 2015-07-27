@@ -1,10 +1,10 @@
 @import url("chrome://tabularasa/skin/colors.less");
 @import url("chrome://tabularasa/skin/reset.less");
 @import url("chrome://tabularasa/skin/normalize.less");
+@import url("chrome://tabularasa/skin/workarounds.less");
 
 @import url("chrome://komodo/skin/plat/shared/scrolltabs.less");
-@import url("chrome://komodo/skin/plat/shared/icons.less");
-@import url("chrome://komodo/skin/iconset/rules.less");
+@import url("chrome://komodo/skin/plat/shared/icons_depend.less");
 
 :root, menupopup, popup, panel
 {
@@ -19,9 +19,7 @@
     font-size: 0.9rem;
 }
 
-::-moz-tree-row {
-    min-height: 2rem;
-}
+/* Komodo Toolbox */
 
 #komodo_main
 {
@@ -31,6 +29,18 @@
 #toolbox_main
 {
     background: @primary;
+    
+    & > vbox, #main-toolboxrow-wrapper
+    {
+        -moz-box-flex: 1;
+    }
+    
+    #main-toolboxrow-wrapper
+    {
+        -moz-box-pack: center;
+        -moz-box-align: center;
+        padding-bottom: 8px;
+    }
     
     &, #main-toolboxrow-wrapper, toolbar, toolbaritem,
     #main-toolboxrow > hbox
@@ -149,11 +159,23 @@ ko-pane[type="icons"] tab
 }
 
 [selected="true"],
-menupopup > menu:hover,
-menupopup > menuitem:hover,
+menupopup menu:hover,
+menupopup menuitem:hover,
 treechildren::-moz-tree-row(selected)
 {
     background: @highlight;
+}
+
+menuseparator
+{
+    height: 1px;
+    background: @border;
+}
+
+.menu-iconic-left
+{
+    visibility: collapse;
+    margin-left: 6px;
 }
 
 /* Scrollbars */

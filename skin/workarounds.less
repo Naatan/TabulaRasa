@@ -1,0 +1,21 @@
+/* These CSS rules ideally should not exist, or should exist elsewhere (in the core of Komodo or a module) */
+
+/* Needs a separator */
+#unifiedMenuPrimaryPane
+{
+    border-right: 1px solid @border;
+}
+
+/* Why do these elements exist if they're not visible? */
+#unifiedMenuButton #window-controls,
+#unifiedMenuButton #fullscreenflex
+{
+    visibility: collapse;
+}
+
+/* Should be removed from openfiles.less */
+#openfilesListbox richlistitem.file-item label.file-title {
+    margin-left: 0 !important;
+}
+
+

@@ -1,47 +1,16 @@
-/* Force icon size to 12px everywhere */
-
-button, toolbarbutton, menuitem, tab
+menu .menu-right
 {
-    &[class$='-icon'] image, [class$='-icon'] image,
-    &[class$='_icon'] image, [class$='_icon'] image,
-    image[class$='-icon'], image[class$='-icon'],
-    image[class$='_icon'], image[class$='_icon']
-    {
-        &:not(.autorepeatbutton-icon)
-        {
-            max-width: 12px;
-            max-height: 12px;
-        }
-    }
+    list-style-image: @icon-arrow-right-small;
 }
 
-.toolbarbutton-icon,
-.button-icon,
-.menu-iconic-icon,
-treechildren::-moz-tree-image,
-.textbox-search-icon,
-.native_file_image,
-dropmarker > image
-{
-    max-width: 12px;
-    max-height: 12px;
-}
-
-#main-toolboxrow toolbarbutton > image,
-#main-toolboxrow toolbarbutton .toolbarbutton-icon
-{
+treechildren::-moz-tree-twisty {
+    -moz-appearance: none;
     width: 16px;
-    max-width: none;
+    height: 16px;
+    margin-right: -8px;
+    list-style-image: @icon-arrow-right-small;
 }
 
-#placesViewbox_placesWrapper
-#findresults_tabpanel-toolbarbox,
-.panel-toolbar-buttons
-{
-    toolbarbutton image &.toolbarbutton-icon,
-    button image &.toolbarbutton-icon
-    {
-        max-width: 12px;
-        max-height: 12px;
-    }
+treechildren::-moz-tree-twisty(open) {
+    list-style-image: @icon-arrow-down-small;
 }

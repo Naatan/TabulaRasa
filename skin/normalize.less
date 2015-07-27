@@ -10,7 +10,7 @@ toolbaritem > toolbarbutton
 
 toolbar
 {
-    padding: 4px 4px 6px;
+    padding: 4px;
 }
 
 tab
@@ -25,7 +25,11 @@ tab
 
 label, description
 {
-    padding: 0.5rem;
+    padding: 0.4rem 4px;
+}
+
+::-moz-tree-row {
+    min-height: 1.6rem;
 }
 
 splitter[orient="horizontal"]
@@ -41,4 +45,22 @@ splitter[orient="vertical"]
 [kohidden="true"], [collapsed="true"]
 {
     visibility: collapse;
+}
+
+toolbarbutton.menu-icon > label
+{
+    visibility: collapse;
+}
+
+.menu-accel-container
+{
+    opacity: 0.6;
+    font-family: monospace;
+}
+
+page.widget listitem,
+page.widget richlistitem
+{
+    padding-left: 4px;
+    padding-right: 4px;
 }

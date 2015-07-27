@@ -1,3 +1,3 @@
 override chrome://komodo/skin/iconset/config.less chrome://tabularasa/skin/icons/config.less
-
 override chrome://komodo/skin/iconset/rules.less chrome://tabularasa/skin/icons/rules.less
+override chrome://komodo/skin/plat/shared/icons_depend.less chrome://tabularasa/skin/icons/depend.less
