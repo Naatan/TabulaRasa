@@ -9,6 +9,12 @@ checkbox, radio, tabpanels, listitem, richlistitem, listheader
     color: @foreground; 
 }
 
+
+toolbarbutton {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+}
+
 toolbaritem > toolbarbutton
 {
     margin: 4px 6px;
@@ -35,9 +41,14 @@ tabs + tabpanels
     border-top: 1px solid @border;
 }
 
-description, listitem, richlistitem, label[id], treecol label, listheader
+description, listitem, richlistitem, label[id], treecol label, listheader,
 {
     padding: 0.2rem 4px;
+}
+
+checkbox + *, radio + *
+{
+    margin-left: 1.5rem;
 }
 
 treecol
@@ -134,7 +145,7 @@ separator
     }
 }
 
-toolbarbutton
+:not(toolbarbutton) > toolbarbutton
 {
     padding: 2px;
     margin: 2px;
@@ -142,6 +153,7 @@ toolbarbutton
 
 button:not(.button-toolbar-a)
 {
+    -moz-appearance: none;
     background: @button;
     color: @button-fg;
     margin: 4px;

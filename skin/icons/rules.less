@@ -3,12 +3,14 @@ menu .menu-right
     list-style-image: @icon-arrow-right-small;
 }
 
-.menulist-dropmarker
+.menulist-dropmarker, .toolbarbutton-menu-dropmarker
 {
     list-style-image: @icon-arrow-down-small;
+    opacity: 0.6;
     display: inherit;
     width: 16px;
     height: 16px;
+    margin: 0 -4px;
 }
 
 treechildren::-moz-tree-twisty {

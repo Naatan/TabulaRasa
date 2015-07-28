@@ -52,3 +52,15 @@ menuitem[type="radio"]
         color: @selected-fg;
     }
 }
+
+/* breadcrumbs.less should not hardcore colors */
+#breadcrumbBar .breadcrumb .toolbarbutton-text {
+    color: @foreground !important;
+    font-family: 'Droid Sans', 'Lucida Grande', 'Segoe UI', 'Open Sans', sans-serif !important;
+    font-size: 0.9rem !important;
+}
+
+/* need to remove this rule from find2.css */
+#open-in-rx-btn, #pin-btn {
+    -moz-appearance: none !important;
+}
