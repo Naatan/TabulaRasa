@@ -5,7 +5,7 @@
         <em:unpack>true</em:unpack>
         <em:id>tabularasa@activestate.com</em:id>
         <em:name>Tabula Rasa</em:name>
-        <em:version>1.0</em:version>
+        <em:version>0.1</em:version>
         <em:description>A clean slate for the Komodo UI.</em:description>
         <em:creator>Nathan Rijksen</em:creator>
         <em:homepageURL>http://komodo.activestate.com/addons/tabularasa/</em:homepageURL>
