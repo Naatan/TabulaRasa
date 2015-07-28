@@ -4,3 +4,5 @@ override chrome://komodo/skin/komodo.css less://tabularasa/skin/legacy/komodo.le
 override chrome://komodo/skin/partials/scheme-skinning.less chrome://tabularasa/skin/legacy/void.css
 override chrome://komodo/skin/toolbar.css chrome://tabularasa/skin/legacy/void.css
 override chrome://global/skin/menu.css chrome://tabularasa/skin/legacy/void.css
+override chrome://global/skin/button.css chrome://tabularasa/skin/legacy/void.css
+override chrome://global/skin/tabbox.css chrome://tabularasa/skin/legacy/void.css

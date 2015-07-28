@@ -4,7 +4,7 @@ label, description, button, toolbarbutton, textbox
 }
 
 description, tab, textbox, menulist, menuitem, menu, treecol, button, toolbarbutton,
-checkbox, tabpanels, listitem, richlistitem
+checkbox, radio, tabpanels, listitem, richlistitem, listheader
 {
     color: @foreground; 
 }
@@ -21,7 +21,7 @@ toolbar
 
 tab
 {
-    padding: 6px;
+    padding: 2px 6px;
     
     label
     {
@@ -29,14 +29,31 @@ tab
     }
 }
 
-description, listitem, richlistitem
+tabpanels + tabs,
+tabs + tabpanels
+{
+    border-top: 1px solid @border;
+}
+
+description, listitem, richlistitem, label[id], treecol label, listheader
 {
     padding: 0.2rem 4px;
 }
 
-image + label
+treecol
 {
-    padding-left: 4px;
+    border-bottom: 2px solid @border;
+    
+    label
+    {
+        padding: 0.5rem 4px;
+        font-weight: bold;
+    }
+}
+
+treecolpicker
+{
+    visibility: collapse;
 }
 
 ::-moz-tree-row {
@@ -67,17 +84,12 @@ toolbarbutton.menu-icon > label
 {
     opacity: 0.6;
     font-family: monospace;
+    margin-left: 2rem;
 }
 
 menu, menuitem
 {
     padding: 0.5rem 6px;
-}
-
-button, toolbarbutton
-{
-    padding: 2px;
-    margin: 2px;
 }
 
 page.widget listitem,
@@ -97,11 +109,14 @@ textbox, menulist
     margin: 4px;
 }
 
-tree:not(.bg_transparent),
-listbox:not(.bg_transparent),
-richlistbox:not(.bg_transparent)
+:root:not(#komodo_main):not(.widget)
 {
-    background: @textbox;
+    tree:not(.bg_transparent),
+    listbox:not(.bg_transparent),
+    richlistbox:not(.bg_transparent)
+    {
+        background: @textbox;
+    }
 }
 
 .disabled, [disabled="true"]
@@ -119,11 +134,28 @@ separator
     }
 }
 
+toolbarbutton
+{
+    padding: 2px;
+    margin: 2px;
+}
+
 button:not(.button-toolbar-a)
 {
     background: @button;
     color: @button-fg;
     margin: 4px;
-    padding: 4px;
+    padding: 0.3rem 1.5rem;
     border-radius: 2px;
+    
+    &.primary, &[default="true"]
+    {
+        background: @button-primary;
+    }
+}
+
+checkbox, radio
+{
+    -moz-box-pack: center;
+    -moz-box-align: center;
 }

@@ -50,6 +50,19 @@ checkbox
     }
 }
 
+radio
+{
+    &:not([selected])
+    {
+        background-image: @icon-radio;
+    }
+    
+    &[selected]
+    {
+        background-image: @icon-radio-selected;
+    }
+}
+
 menuitem[type="checkbox"],
 menuitem[type="radio"]
 {
