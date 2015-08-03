@@ -38,42 +38,42 @@
 #toolbox_main
 {
     background: @primary;
-    
+
     & > vbox, #main-toolboxrow-wrapper
     {
         -moz-box-flex: 1;
     }
-    
+
     #main-toolboxrow-wrapper
     {
         -moz-box-pack: center;
         -moz-box-align: center;
         padding: 8px 0;
     }
-    
+
     &, #main-toolboxrow-wrapper, toolbar, toolbaritem,
     #main-toolboxrow > hbox
     {
         -moz-box-orient: vertical !important;
     }
-    
+
     toolbar
     {
         width: auto !important;
         max-width: 50px;
         padding: 0;
     }
-    
+
     #main-toolboxrow-wrapper > toolbar
     {
         visibility: collapse;
     }
-    
+
     toolbarbutton dropmarker
     {
         visibility: collapse;
     }
-    
+
     toolbaritem > toolbarbutton
     {
         margin: 4px 0;
@@ -84,7 +84,7 @@ statusbar
 {
     border-top: 1px solid @border;
     background: @primary;
-    
+
     statusbarpanel > label
     {
         margin: 2px;
@@ -98,37 +98,37 @@ splitter
     {
         background-color: @border;
     }
-    
+
     &.workspace_splitter
     {
         position: relative;
         z-index: 100;
-        
+
         &[orient="horizontal"]
         {
             min-width: 5px;
             width: 5px;
         }
-        
+
         &[orient="vertical"]
         {
             min-height: 5px;
             height: 5px;
         }
     }
-    
+
     &#workspace_left_splitter
     {
         border-right: 1px solid @border;
         margin-left: -4px;
     }
-    
+
     &#workspace_right_splitter
     {
         border-left: 1px solid @border;
         margin-right: -4px;
     }
-    
+
     &#bottom_splitter
     {
         border-top: 1px solid @border;
@@ -156,26 +156,26 @@ menupopup
 tabs
 {
     box-shadow: inset 0px -4px 0px 0px @border;
-    
+
     tab
     {
         -moz-box-pack: center;
         -moz-box-align: center;
         min-height: 32px;
     }
-    
+
     tab:not([selected])
     {
         border-bottom: 4px solid transparent;
     }
-    
+
     tab[selected]
     {
         &, [selected]
         {
             background: @highlight;
         }
-        
+
         position: relative;
         z-index: 100;
         border-bottom: 4px solid @special;
@@ -195,7 +195,7 @@ treechildren::-moz-tree-row(selected)
 {
     color: @selected-fg;
     background: @selected;
-    
+
     description, label
     {
         color: @selected-fg;
@@ -208,7 +208,7 @@ richlistitem, listitem, row /* :any is too flaky */
     {
         color: @selected-fg;
         background: @selected;
-        
+
         description, label
         {
             color: @selected-fg;
@@ -252,12 +252,12 @@ scrollbar
     border: 0;
     background: transparent;
     opacity: 1.0 !important;
-    
+
     &[orient="vertical"]
     {
         min-width: 15px;
     }
-    
+
     &[orient="horizontal"]
     {
         min-height: 15px;
@@ -305,7 +305,7 @@ ko-pane:not([customizing]) .pane-drop-target
     padding: 0 24px;
 }
 
-caption 
+caption
 {
     margin-top: 1rem;
     label
@@ -316,7 +316,7 @@ caption
     }
 }
 
-.hud
+.hud, #editorTooltip
 {
     background: @primary;
     border: 1px solid @border;
@@ -330,13 +330,13 @@ caption
         font-size: 1rem !important;
         color: @selected-fg;
     }
-    
+
     separator
     {
         height: 1px;
         background: @border;
     }
-    
+
     #commando-tip
     {
         background: @secondary;
