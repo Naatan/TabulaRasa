@@ -6,27 +6,6 @@
 @import url("chrome://komodo/skin/plat/shared/scrolltabs.less");
 @import url("chrome://komodo/skin/plat/shared/icons_depend.less");
 
-:root
-{
-    font: message-box;
-}
-
-:root, menupopup, popup, panel, tree
-{
-    background: @background;
-    color: @foreground;
-}
-
-::-moz-tree-cell-text
-{
-    color: @foreground;
-}
-
-*, ::-moz-tree-cell-text
-{
-    font-family: 'Droid Sans', 'Lucida Grande', 'Segoe UI', 'Open Sans', sans-serif;
-    font-size: 0.9rem;
-}
 
 /* Komodo Toolbox */
 
@@ -80,6 +59,8 @@
     }
 }
 
+/* Statusbar */
+
 statusbar
 {
     border-top: 1px solid @border;
@@ -92,13 +73,10 @@ statusbar
     }
 }
 
+/* Workspace splitter */
+
 splitter
 {
-    &:not(.workspace_splitter)
-    {
-        background-color: @border;
-    }
-
     &.workspace_splitter
     {
         position: relative;
@@ -136,6 +114,8 @@ splitter
     }
 }
 
+/* Places */
+
 #placesSubpanelSplitterHboxBorder
 {
     margin: 0 !important;
@@ -146,149 +126,6 @@ splitter
 #placesSubpanelDeck
 {
     /*background: @secondary !important;*/
-}
-
-menupopup
-{
-    border: 1px solid @border;
-}
-
-tabs
-{
-    box-shadow: inset 0px -4px 0px 0px @border;
-
-    tab
-    {
-        -moz-box-pack: center;
-        -moz-box-align: center;
-        min-height: 32px;
-    }
-
-    tab:not([selected])
-    {
-        border-bottom: 4px solid transparent;
-    }
-
-    tab[selected]
-    {
-        &, [selected]
-        {
-            background: @highlight;
-        }
-
-        position: relative;
-        z-index: 100;
-        border-bottom: 4px solid @special;
-    }
-}
-
-ko-pane[type="icons"] tab
-{
-    padding: 6px;
-    .tab-icon
-    {
-        margin-right: 0;
-    }
-}
-
-treechildren::-moz-tree-row(selected)
-{
-    color: @selected-fg;
-    background: @selected;
-
-    description, label
-    {
-        color: @selected-fg;
-    }
-}
-
-richlistitem, listitem, row /* :any is too flaky */
-{
-    &[selected="true"]
-    {
-        color: @selected-fg;
-        background: @selected;
-
-        description, label
-        {
-            color: @selected-fg;
-        }
-    }
-}
-
-treechildren::-moz-tree-cell-text(selected)
-{
-    color: @selected-fg;
-}
-
-menupopup menu:hover,
-menupopup menuitem:hover
-{
-    background: @highlight;
-}
-
-menuseparator
-{
-    height: 1px;
-    background: @border;
-}
-
-.menu-iconic-left
-{
-    visibility: collapse;
-    margin-left: 6px;
-}
-
-/* Scrollbars */
-
-page.widget[containerOrient="vertical"] scrollbar
-{
-    margin-left: -15px;
-}
-
-scrollbar
-{
-    -moz-appearance: none;
-    border: 0;
-    background: transparent;
-    opacity: 1.0 !important;
-
-    &[orient="vertical"]
-    {
-        min-width: 15px;
-    }
-
-    &[orient="horizontal"]
-    {
-        min-height: 15px;
-    }
-
-    slider
-    {
-        -moz-appearance: none;
-        border: 0;
-    }
-
-    thumb
-    {
-        -moz-appearance: none;
-        background: @secondary;
-        border: 0;
-    }
-
-    thumb:hover
-    {
-        -moz-appearance: none;
-        background: @secondary;
-    }
-}
-
-tree, listbox, richlistbox
-{
-    &:not(.bg_transparent) scrollbar thumb
-    {
-        background: @background;
-    }
 }
 
 /* Customizable Panes */
@@ -305,16 +142,7 @@ ko-pane:not([customizing]) .pane-drop-target
     padding: 0 24px;
 }
 
-caption
-{
-    margin-top: 1rem;
-    label
-    {
-        font-size: 1.2rem;
-        color: @caption;
-        font-weight: bold;
-    }
-}
+/* HUD elements */
 
 .hud, #editorTooltip
 {

@@ -1,6 +1,29 @@
+/* Fonts and colors */
+:root
+{
+    font: message-box;
+}
+
 label, description, button, toolbarbutton, textbox
 {
     line-height: 1.5rem;
+}
+
+description, listitem, richlistitem, label[id], treecol label, listheader,
+{
+    padding: 0.2rem 4px;
+}
+
+caption 
+{
+    margin-top: 1rem;
+    
+    label
+    {
+        font-size: 1.2rem;
+        color: @caption;
+        font-weight: bold;
+    }
 }
 
 description, tab, textbox, menulist, menuitem, menu, treecol, button, toolbarbutton,
@@ -9,6 +32,37 @@ checkbox, radio, tabpanels, listitem, richlistitem, listheader
     color: @foreground; 
 }
 
+:root, menupopup, popup, panel, tree
+{
+    background: @background;
+    color: @foreground;
+}
+
+::-moz-tree-cell-text
+{
+    color: @foreground;
+}
+
+*, ::-moz-tree-cell-text
+{
+    font-family: 'Droid Sans', 'Lucida Grande', 'Segoe UI', 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Helpers */
+
+[kohidden="true"], [collapsed="true"]
+{
+    visibility: collapse;
+}
+
+.disabled, [disabled="true"]
+{
+    opacity: 0.6;
+}
+
+
+/* Toolbars */
 
 toolbarbutton {
   -moz-box-align: center;
@@ -24,6 +78,20 @@ toolbar
 {
     padding: 4px;
 }
+
+toolbarbutton.menu-icon > label
+{
+    visibility: collapse;
+}
+
+:not(toolbarbutton) > toolbarbutton
+{
+    padding: 2px;
+    margin: 2px;
+}
+
+
+/* Tabs */
 
 tab
 {
@@ -41,15 +109,68 @@ tabs + tabpanels
     border-top: 1px solid @border;
 }
 
-description, listitem, richlistitem, label[id], treecol label, listheader,
+tabs
 {
-    padding: 0.2rem 4px;
+    box-shadow: inset 0px -4px 0px 0px @border;
+    
+    tab
+    {
+        -moz-box-pack: center;
+        -moz-box-align: center;
+        min-height: 32px;
+    }
+    
+    tab:not([selected])
+    {
+        border-bottom: 4px solid transparent;
+    }
+    
+    tab[selected]
+    {
+        &, [selected]
+        {
+            background: @highlight;
+        }
+        
+        position: relative;
+        z-index: 100;
+        border-bottom: 4px solid @special;
+    }
 }
+
+ko-pane[type="icons"] tab
+{
+    padding: 6px;
+    .tab-icon
+    {
+        margin-right: 0;
+    }
+}
+
+
+/* Form Elements */
 
 checkbox + *, radio + *
 {
     margin-left: 1.5rem;
 }
+
+checkbox, radio
+{
+    -moz-box-pack: center;
+    -moz-box-align: center;
+}
+
+textbox, menulist
+{
+    background: @textbox;
+    padding: 4px;
+    border-radius: 2px;
+    margin: 4px;
+}
+
+
+/* Trees & listboxes */
 
 treecol
 {
@@ -71,6 +192,48 @@ treecolpicker
     min-height: 1.6rem;
 }
 
+:root:not(#komodo_main):not(.widget)
+{
+    tree:not(.bg_transparent),
+    listbox:not(.bg_transparent),
+    richlistbox:not(.bg_transparent)
+    {
+        background: @textbox;
+    }
+}
+
+treechildren::-moz-tree-row(selected)
+{
+    color: @selected-fg;
+    background: @selected;
+    
+    description, label
+    {
+        color: @selected-fg;
+    }
+}
+
+richlistitem, listitem, row /* :any is too flaky */
+{
+    &[selected="true"]
+    {
+        color: @selected-fg;
+        background: @selected;
+        
+        description, label
+        {
+            color: @selected-fg;
+        }
+    }
+}
+
+treechildren::-moz-tree-cell-text(selected)
+{
+    color: @selected-fg;
+}
+
+/* Splitters */
+
 splitter[orient="horizontal"]
 {
     min-width: 1px;
@@ -81,14 +244,27 @@ splitter[orient="vertical"]
     min-height: 1px;
 }
 
-[kohidden="true"], [collapsed="true"]
+splitter:not(.workspace_splitter)
 {
-    visibility: collapse;
+    background-color: @border;
+}    
+
+separator
+{
+    height: 1rem;
+    
+    &.slim
+    {
+        height: 0.5rem;
+    }
 }
 
-toolbarbutton.menu-icon > label
+
+/* Menu's */
+
+menupopup
 {
-    visibility: collapse;
+    border: 1px solid @border;
 }
 
 .menu-accel-container
@@ -103,6 +279,27 @@ menu, menuitem
     padding: 0.5rem 6px;
 }
 
+menupopup menu:hover,
+menupopup menuitem:hover
+{
+    background: @highlight;
+}
+
+menuseparator
+{
+    height: 1px;
+    background: @border;
+}
+
+.menu-iconic-left
+{
+    visibility: collapse;
+    margin-left: 6px;
+}
+
+
+/* Panes */
+
 page.widget listitem,
 page.widget richlistitem
 {
@@ -110,46 +307,8 @@ page.widget richlistitem
     padding-right: 4px;
 }
 
-/* Textboxes */
 
-textbox, menulist
-{
-    background: @textbox;
-    padding: 4px;
-    border-radius: 2px;
-    margin: 4px;
-}
-
-:root:not(#komodo_main):not(.widget)
-{
-    tree:not(.bg_transparent),
-    listbox:not(.bg_transparent),
-    richlistbox:not(.bg_transparent)
-    {
-        background: @textbox;
-    }
-}
-
-.disabled, [disabled="true"]
-{
-    opacity: 0.6;
-}
-
-separator
-{
-    height: 1rem;
-    
-    &.slim
-    {
-        height: 0.5rem;
-    }
-}
-
-:not(toolbarbutton) > toolbarbutton
-{
-    padding: 2px;
-    margin: 2px;
-}
+/* Buttons */
 
 button:not(.button-toolbar-a)
 {
@@ -166,8 +325,55 @@ button:not(.button-toolbar-a)
     }
 }
 
-checkbox, radio
+
+/* Scrollbars */
+
+page.widget[containerOrient="vertical"] scrollbar
 {
-    -moz-box-pack: center;
-    -moz-box-align: center;
+    margin-left: -15px;
+}
+
+scrollbar
+{
+    -moz-appearance: none;
+    border: 0;
+    background: transparent;
+    opacity: 1.0 !important;
+    
+    &[orient="vertical"]
+    {
+        min-width: 15px;
+    }
+    
+    &[orient="horizontal"]
+    {
+        min-height: 15px;
+    }
+
+    slider
+    {
+        -moz-appearance: none;
+        border: 0;
+    }
+
+    thumb
+    {
+        -moz-appearance: none;
+        background: @secondary;
+        border: 0;
+    }
+
+    thumb:hover
+    {
+        -moz-appearance: none;
+        background: @secondary;
+    }
+}
+
+tree, listbox, richlistbox
+{
+    &:not(.bg_transparent) scrollbar thumb
+    {
+        background: @background;
+    }
 }
