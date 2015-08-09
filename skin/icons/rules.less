@@ -78,3 +78,16 @@ menuitem[type="radio"]
         height: 16px;
     }
 }
+
+#toolbox2-hierarchy-tree treechildren::-moz-tree-image(container)
+{
+    width: 0;
+}
+
+#toolbox2-hierarchy-tree treechildren::-moz-tree-cell-text(container)
+{
+    min-height: 16px;
+    padding-left: 20px;
+    margin-left: 2px;
+    background: @icon-folder-closed top left no-repeat;
+}
