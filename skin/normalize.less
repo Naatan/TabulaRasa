@@ -315,7 +315,7 @@ page.widget richlistitem
 
 /* Buttons */
 
-button:not(.button-toolbar-a)
+:not(button) > button:not(.button-toolbar-a)
 {
     -moz-appearance: none;
     background: @button;
@@ -323,6 +323,11 @@ button:not(.button-toolbar-a)
     margin: 4px;
     padding: 0.3rem 1.5rem;
     border-radius: 2px;
+    
+    label.button-text
+    {
+        color: @button-fg;
+    }
     
     &.primary, &[default="true"]
     {
