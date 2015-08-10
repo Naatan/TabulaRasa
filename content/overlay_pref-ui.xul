@@ -120,6 +120,10 @@
                         <label>Folder Icons: </label>
                         <hbox class="colorpicker" name="folder"><box/></hbox>
                     </vbox>
+                    <vbox>
+                        <label>Special Icons: </label>
+                        <hbox class="colorpicker" name="icons-special"><box/></hbox>
+                    </vbox>
                 </hbox>
             </vbox>
             <hbox id="color_buttons">
