@@ -1,3 +1,4 @@
 content tabularasa content/
 skin tabularasa classic/1.0 skin/
 overlay chrome://komodo/content/pref/pref-ui.xul chrome://tabularasa/content/overlay_pref-ui.xul
+overlay chrome://komodo/content/komodo.xul chrome://tabularasa/content/overlay_komodo.xul

@@ -1,20 +1,21 @@
 @import url("chrome://tabularasa/skin/colors.less");
+@import url("chrome://tabularasa/skin/colors_override.less");
 
-@icon-url-suffix:               "?preset=base";
-@icon-toolbar-url-suffix:       "?preset=toolbar";
-@icon-widget-url-suffix:        "?preset=widgets";
-@icon-selected-url-suffix:      "?preset=selected";
-@icon-hud-url-suffix:           "?preset=hud";
+@icon-url-suffix:               "?color=@{escaped-icons}";
+@icon-toolbar-url-suffix:       "?color=@{escaped-icons}";
+@icon-widget-url-suffix:        "?color=@{escaped-icons}";
+@icon-selected-url-suffix:      "?color=@{escaped-icons-selected}";
+@icon-hud-url-suffix:           "?color=@{escaped-icons}";
 
-@icon-folder-large:             url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{folder}&size=32');
-@icon-folder-open:              url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{escaped-folder}');
-@icon-folder-closed:            url('@{icon-url-prefix}folder2.svg@{icon-url-suffix}&color=@{escaped-folder}');
-@icon-folder-remote:            url('@{icon-url-prefix}folder3.svg@{icon-url-suffix}&color=@{escaped-folder}');
-@icon-project:                  url('@{icon-url-prefix}cabinet.svg@{icon-url-suffix}&color=@{escaped-folder}');
+@icon-folder-large:             url('@{icon-url-prefix}folder2.svg?color=@{escaped-folder}&size=32');
+@icon-folder-open:              url('@{icon-url-prefix}folder2.svg?color=@{escaped-folder}');
+@icon-folder-closed:            url('@{icon-url-prefix}folder2.svg?color=@{escaped-folder}');
+@icon-folder-remote:            url('@{icon-url-prefix}folder3.svg?color=@{escaped-folder}');
+@icon-project:                  url('@{icon-url-prefix}cabinet.svg?color=@{escaped-folder}');
 
-@icon-arrow-down-small:        url("@{icon-url-prefix}arrow-down2.svg@{icon-url-suffix}");
+@icon-arrow-down-small:         url("@{icon-url-prefix}arrow-down2.svg@{icon-url-suffix}");
 
-@icon-checkbox:                 url("@{icon-url-prefix}checkbox-unchecked3.svg@{icon-url-suffix}&color=@{escaped-special}");
-@icon-checkbox-checked:         url("@{icon-url-prefix}checkbox-partial3.svg@{icon-url-suffix}&color=@{escaped-special}");
-@icon-radio:                    url("@{icon-url-prefix}radio-unchecked.svg@{icon-url-suffix}&color=@{escaped-special}");
-@icon-radio-selected:           url("@{icon-url-prefix}radio-checked.svg@{icon-url-suffix}&color=@{escaped-special}");
+@icon-checkbox:                 url("@{icon-url-prefix}checkbox-unchecked3.svg?color=@{escaped-special}");
+@icon-checkbox-checked:         url("@{icon-url-prefix}checkbox-partial3.svg?color=@{escaped-special}");
+@icon-radio:                    url("@{icon-url-prefix}radio-unchecked.svg?color=@{escaped-special}");
+@icon-radio-selected:           url("@{icon-url-prefix}radio-checked.svg?color=@{escaped-special}");

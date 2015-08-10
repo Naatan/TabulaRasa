@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
-<!-- Copyright (c) 2000-2013 ActiveState Software Inc. -->
 <!-- See the file LICENSE.txt for licensing information. -->
 <!DOCTYPE overlay PUBLIC "-//MOZILLA//DTD XUL V1.0//EN" "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" [
   <!ENTITY % tabularasaDTD SYSTEM "chrome://gtk-adwaita/locale/tabularasa.dtd">
   %tabularasaDTD;
 ]>
+
+<?xml-stylesheet href="less://tabularasa/skin/prefs.less" type="text/css"?>
 
 <overlay id="tabularasaPrefUiOverlay"
     xmlns:html="http://www.w3.org/1999/xhtml"
@@ -26,5 +27,111 @@
                   value="chrome://tabularasa/content/iconset/chrome.manifest"
                   />
     </menupopup>
+    
+    <vbox id="ui-prefs-vbox">
+        <groupbox id="skin_colors" insertafter="pref_appearance_interface">
+            <caption label="Skin Colors"/>
+            <description>You may need to restart Komodo for these changes to propagate properly</description>
+            <vbox>
+                <label>Foreground</label>
+                <hbox id="colors_foreground">
+                    <vbox>
+                        <label>Default: </label>
+                        <hbox class="colorpicker" name="foreground"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Selections: </label>
+                        <hbox class="colorpicker" name="selected-fg"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Buttons: </label>
+                        <hbox class="colorpicker" name="button-fg"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Captions: </label>
+                        <hbox class="colorpicker" name="caption"><box/></hbox>
+                    </vbox>
+                </hbox>
+            </vbox>
+            <vbox>
+                <label>Background</label>
+                <hbox id="colors_background">
+                    <vbox>
+                        <label>Default: </label>
+                        <hbox class="colorpicker" name="background"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label tooltip="eg: Toolbars, statusbar, HUD ..">Primary: </label>
+                        <hbox class="colorpicker" name="primary"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label tooltip="Contrast for primary">Secondary: </label>
+                        <hbox class="colorpicker" name="secondary"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Highlights: </label>
+                        <hbox class="colorpicker" name="highlight"><box/></hbox>
+                    </vbox>
+                </hbox>
+                <hbox id="colors_background2">
+                    <vbox>
+                        <label>Selected: </label>
+                        <hbox class="colorpicker" name="selected"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Textboxes: </label>
+                        <hbox class="colorpicker" name="textbox"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Buttons: </label>
+                        <hbox class="colorpicker" name="button"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Primary Buttons: </label>
+                        <hbox class="colorpicker" name="button-primary"><box/></hbox>
+                    </vbox>
+                </hbox>
+            </vbox>
+            <vbox>
+                <label>Miscellaneous</label>
+                <hbox id="colors_misc">
+                    <vbox>
+                        <label>Borders: </label>
+                        <hbox class="colorpicker" name="border"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label tooltip='Used sparcely for elements that need to "pop out"'>Special: </label>
+                        <hbox class="colorpicker" name="special"><box/></hbox>
+                    </vbox>
+                </hbox>
+            </vbox>
+            <vbox id="colors_icons">
+                <label>Icons</label>
+                <hbox id="colors_misc">
+                    <vbox>
+                        <label>Icons: </label>
+                        <hbox class="colorpicker" name="icons"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Selected Icons: </label>
+                        <hbox class="colorpicker" name="icons-selected"><box/></hbox>
+                    </vbox>
+                    <vbox>
+                        <label>Folder Icons: </label>
+                        <hbox class="colorpicker" name="folder"><box/></hbox>
+                    </vbox>
+                </hbox>
+            </vbox>
+            <hbox id="color_buttons">
+                <button label="Undo" oncommand="undoColors()"/>
+                <button label="Reset" oncommand="resetColors()"/>
+                <separator/>
+                <button label="Export" oncommand="exportColors()"/>
+                <button label="Import" oncommand="importColors()"/>
+            </hbox>
+        </groupbox>
+    </vbox>
+    
+    <script src="chrome://tabularasa/content/prefs.js" type="application/x-javascript;version=1.7"/>
 
 </overlay>

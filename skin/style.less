@@ -1,4 +1,5 @@
 @import url("chrome://tabularasa/skin/colors.less");
+@import url("chrome://tabularasa/skin/colors_override.less");
 @import url("chrome://tabularasa/skin/reset.less");
 @import url("chrome://tabularasa/skin/normalize.less");
 @import url("chrome://tabularasa/skin/workarounds.less");
@@ -9,7 +10,7 @@
 
 /* Komodo Toolbox */
 
-#komodo_main
+#komodo_main:not(._tr_loaded)
 {
     -moz-box-orient: horizontal;
 }
@@ -177,13 +178,6 @@ ko-pane:not([customizing]) .pane-drop-target
 {
     padding-right: 4px;
     padding-left: 2px;
-}
-
-/* Breadcrumbs */
-#breadcrumbBar menuitem .menu-iconic-left,
-#breadcrumbBar menu .menu-iconic-left
-{
-    margin-right: 4px;
 }
 
 .widgetToolbarWrap

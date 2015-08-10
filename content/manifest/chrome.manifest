@@ -1,4 +1,5 @@
 override chrome://komodo/skin/platform.less chrome://tabularasa/skin/style.less
+override chrome://komodo/skin/scrollbars.less chrome://tabularasa/skin/scrollbars.less
 
 override chrome://komodo/skin/komodo.css less://tabularasa/skin/legacy/komodo.less
 override chrome://komodo/skin/bindings/buttons.css chrome://tabularasa/skin/legacy/buttons.css

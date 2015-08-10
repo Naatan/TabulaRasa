@@ -10,7 +10,8 @@
         <em:creator>Nathan Rijksen</em:creator>
         <em:homepageURL>http://komodo.activestate.com/addons/tabularasa/</em:homepageURL>
         <em:iconURL>chrome://tabularasa/skin/icon.png</em:iconURL>
-        <em:type>2</em:type> <!-- type=extension --> 
+        <em:type>2</em:type> <!-- type=extension -->
+        <em:unpack>true</em:unpack>
 
         <em:targetApplication>
             <Description>
