@@ -1,5 +1,6 @@
 var $ = require("ko/dom");
 var prefs = require("ko/prefs");
+var log = require("ko/logging").getLogger("tabularasa");
 
 function customColor(name) {
     var colorpicker = $(".colorpicker[name="+name+"]").element();
@@ -18,7 +19,7 @@ function customColor(name) {
             picker = Components.classes[cid]
                                .getService(Components.interfaces.koIColorPickerAsync);
         } catch (ex) {
-            log.exception(ex, "Unable to load the colorpicker with CID: " + cid);
+            log.error("Unable to load the colorpicker with CID: " + cid);
             picker = null;
         }
     }
@@ -150,7 +151,7 @@ function exportColors()
 function importColors()
 {
     var ko = window.parent.opener.ko;
-    var path = ko.filepicker.openFile(null,null,"Select Theme File");
+    var path = ko.filepicker.browseForFile(null, null, "Select Theme File");
     var ioFile = require("sdk/io/file");
     
     try
@@ -160,7 +161,7 @@ function importColors()
     }
     catch (e)
     {
-        alert(e.message);
+        log.error("An error occurred while importing colors: " + e.message);
         return;
     }
     
