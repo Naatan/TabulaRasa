@@ -152,9 +152,10 @@ function importColors()
 {
     var ko = window.parent.opener.ko;
     var path = ko.filepicker.browseForFile(null, null, "Select Theme File");
-    if (path === null) {
+    if (!path) {
         return;
     }
+
     var ioFile = require("sdk/io/file");
     
     try
