@@ -8,11 +8,13 @@ very bare basic and simple that can then be extended upon. The main purpose of
 this skin is to simplify the CSS in Komodo, the actual look and feel is secondary
 and is currently using other skins as a point of reference.
 
+This skin allows you to use your own colors, as well as use color themes
+provided by other users.
+
 
 # Roadmap (not implemented yet)
 
  * Color according to color scheme
- * Make colors configurable
  * Test, fix, test, polish, test, test ... test
  
  
