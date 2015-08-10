@@ -127,8 +127,8 @@
                 </hbox>
             </vbox>
             <hbox id="color_buttons">
-                <button label="Undo" oncommand="undoColors()"/>
                 <button label="Reset" oncommand="resetColors()"/>
+                <button label="Defaults" oncommand="defaultColors()"/>
                 <separator/>
                 <button label="Export" oncommand="exportColors()"/>
                 <button label="Import" oncommand="importColors()"/>

@@ -99,14 +99,14 @@ function OnPreferencePageOK(prefset) /* Hacky, but this stuff is hacky by defini
     return true;
 }
 
-function resetColors()
+function defaultColors()
 {
     var ko = window.parent.opener.ko;
     var colors = ko.tabularasa.parseColors(false);
     resetColorsUsing(colors);
 }
 
-function undoColors()
+function resetColors()
 {
     resetColorsUsing(onloadColors);
 }
