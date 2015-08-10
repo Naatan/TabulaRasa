@@ -11,6 +11,7 @@ and is currently using other skins as a point of reference.
 This skin allows you to use your own colors, as well as use color themes
 provided by other users.
 
+![Preferences](preferences.png)
 
 # Roadmap (not implemented yet)
 
