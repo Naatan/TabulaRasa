@@ -5,9 +5,10 @@
         <em:unpack>true</em:unpack>
         <em:id>tabularasa@activestate.com</em:id>
         <em:name>Tabula Rasa</em:name>
-        <em:version>0.2</em:version>
+        <em:version>0.3</em:version>
         <em:description>A clean slate for the Komodo UI.</em:description>
         <em:creator>Nathan Rijksen</em:creator>
+        <em:contributor>Sergey Kislyakov</em:contributor>
         <em:homepageURL>http://komodo.activestate.com/addons/tabularasa/</em:homepageURL>
         <em:iconURL>chrome://tabularasa/skin/icon.png</em:iconURL>
         <em:type>2</em:type> <!-- type=extension -->
