@@ -152,6 +152,10 @@ function importColors()
 {
     var ko = window.parent.opener.ko;
     var path = ko.filepicker.browseForFile(null, null, "Select Theme File");
+    if (!path) {
+        return;
+    }
+
     var ioFile = require("sdk/io/file");
     
     try
@@ -161,7 +165,7 @@ function importColors()
     }
     catch (e)
     {
-        log.error("An error occurred while importing colors: " + e.message);
+        alert("No colors will be imported (" + e.message + ")");
         return;
     }
     
