@@ -19,7 +19,7 @@ function customColor(name) {
             picker = Components.classes[cid]
                                .getService(Components.interfaces.koIColorPickerAsync);
         } catch (ex) {
-            log.error("Unable to load the colorpicker with CID: " + cid);
+            log.exception("Unable to load the colorpicker with CID: " + cid);
             picker = null;
         }
     }
